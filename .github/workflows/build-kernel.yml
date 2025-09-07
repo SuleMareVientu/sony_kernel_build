@@ -1,4 +1,4 @@
-name: Build Kernel (nio,NoKernelSU)
+name: Build Kernel
 
 
 on:
