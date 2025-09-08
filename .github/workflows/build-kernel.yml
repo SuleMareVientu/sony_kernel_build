@@ -25,7 +25,7 @@ jobs:
         run: |
           git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_aarch64_aarch64-linux-android-4.9 aarch64-linux-android-4.9
           git clone --depth=1 https://github.com/LineageOS/android_prebuilts_gcc_linux-x86_arm_arm-linux-androideabi-4.9 arm-linux-androideabi-4.9
-          wget "https://github.com/SuleMareVientu/Qualcomm_Snapdragon_LLVM_ARM_Toolchain_OEM/releases/download/12.1.5.0/12.1.5.0.zip"
+          wget --no-verbose "https://github.com/SuleMareVientu/Qualcomm_Snapdragon_LLVM_ARM_Toolchain_OEM/releases/download/12.1.5.0/12.1.5.0.zip"
           unzip -q "12.1.5.0.zip"
           rm "12.1.5.0.zip"
           mv "12.1.5.0" "clang"
