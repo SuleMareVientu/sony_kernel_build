@@ -37,14 +37,13 @@ jobs:
       - name: SukiSU
         run: |
           cd kernel-source
-          KERNEL_ROOT=$(PWD)
           curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
           cd ..
           git clone --depth=1 https://gitlab.com/simonpunk/susfs4ksu.git -b kernel-5.4 susfs4ksu
           cd susfs4ksu
-          cp ./kernel_patches/50_add_susfs_in_kernel-5.4.patch $KERNEL_ROOT/
-          cp ./kernel_patches/fs/susfs.c $KERNEL_ROOT/fs/
-          cp ./kernel_patches/include/linux/susfs.h $KERNEL_ROOT/include/linux/
+          cp ./kernel_patches/50_add_susfs_in_kernel-5.4.patch ../kernel-source/
+          cp ./kernel_patches/fs/susfs.c ../kernel-source/fs/
+          cp ./kernel_patches/include/linux/susfs.h ../kernel-source/include/linux/
           cd ../kernel-source
           patch -p1 < 50_add_susfs_in_kernel.patch
           #echo "CONFIG_OVERLAY_FS=y" >> ./arch/arm64/configs/${{ env.KERNEL_CONFIG }}
