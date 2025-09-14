@@ -42,6 +42,7 @@ jobs:
 
       - name: Build kernel
         run: |
+          cd kernel-source && touch ".scmversion" && cd ..
           export KBUILD_BUILD_USER="hiahia"
           export PATH=$GITHUB_WORKSPACE/clang/bin:${PATH}
           args="                  ARCH=arm64 \
