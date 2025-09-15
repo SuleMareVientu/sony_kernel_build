@@ -1,4 +1,4 @@
-name: Build Kernel (SukiSU)
+name: Build Kernel (SukiSU-SUSFS)
 
 
 on:
@@ -34,7 +34,7 @@ jobs:
         run: |
           git clone --depth=2147483647 ${{ env.KERNEL_SOURCE }} -b ${{ env.KERNEL_SOURCE_BRANCH }} kernel-source
           
-      - name: SukiSU
+      - name: SukiSU (SUSFS Branch)
         run: |
           cd kernel-source
           curl -LSs "https://raw.githubusercontent.com/SukiSU-Ultra/SukiSU-Ultra/main/kernel/setup.sh" | bash -s susfs-main
